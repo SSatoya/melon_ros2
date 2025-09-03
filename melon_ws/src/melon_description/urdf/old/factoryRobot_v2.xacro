@@ -1,0 +1,166 @@
+<?xml version="1.0" ?>
+<robot name="factoryRobot_v2" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find factoryRobot_v2_description)/urdf/materials.xacro" />
+  <xacro:include filename="$(find factoryRobot_v2_description)/urdf/factoryRobot_v2.ros2control" />
+  <xacro:include filename="$(find factoryRobot_v2_description)/urdf/factoryRobot_v2.gazebo" />
+
+  <xacro:macro name="factoryRobot_v2" params="prefix">
+    <link name="${prefix}base_link">
+      <inertial>
+        <origin xyz="0.01744420260337036 0.0763481410355218 0.4235647920657504" rpy="0 0 0"/>
+        <mass value="183.95953788367575"/>
+        <inertia ixx="16.050446" iyy="13.982493" izz="18.567703" ixy="0.002034" iyz="-2.999695" ixz="0.007151"/>
+      </inertial>
+
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <!-- <mesh filename="file://$(find factoryRobot_v2_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/> -->
+          <mesh filename="package://factoryRobot_v2_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="silver"/>
+      </visual>
+
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <!-- <mesh filename="file://$(find factoryRobot_v2_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/> -->
+          <mesh filename="package://factoryRobot_v2_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="${prefix}right_wheel_1">
+      <inertial>
+        <origin xyz="-0.020080456317257633 -2.190901024334141e-07 -9.838097278502822e-08" rpy="0 0 0"/>
+        <mass value="1.1302789230907524"/>
+        <inertia ixx="0.005139" iyy="0.002706" izz="0.002706" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+      </inertial>
+
+      <visual>
+        <origin xyz="0.242002 0.007002 -0.10065" rpy="0 0 0"/>
+        <geometry>
+          <!-- <mesh filename="file://$(find factoryRobot_v2_description)/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/> -->
+          <mesh filename="package://factoryRobot_v2_description/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="dark"/>
+      </visual>
+
+      <collision>
+        <origin xyz="0.242002 0.007002 -0.10065" rpy="0 0 0"/>
+        <geometry>
+          <!-- <mesh filename="file://$(find factoryRobot_v2_description)/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/> -->
+          <mesh filename="package://factoryRobot_v2_description/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="${prefix}left_wheel_1">
+      <inertial>
+        <origin xyz="0.019919543682742402 -2.1909010231892234e-07 -9.838097249359468e-08" rpy="0 0 0"/>
+        <mass value="1.1302789230907526"/>
+        <inertia ixx="0.005139" iyy="0.002706" izz="0.002706" ixy="0.0" iyz="0.0" ixz="0.0"/>
+      </inertial>
+      
+      <visual>
+        <origin xyz="-0.277998 0.007002 -0.10065" rpy="0 0 0"/>
+        <geometry>
+          <!-- <mesh filename="file://$(find factoryRobot_v2_description)/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/> -->
+          <mesh filename="package://factoryRobot_v2_description/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="dark"/>
+      </visual>
+      <collision>
+        <origin xyz="-0.277998 0.007002 -0.10065" rpy="0 0 0"/>
+        <geometry>
+          <!-- <mesh filename="file://$(find factoryRobot_v2_description)/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/> -->
+          <mesh filename="package://factoryRobot_v2_description/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="${prefix}right_wheel_joint" type="continuous">
+      <origin xyz="-0.242002 -0.007002 0.10065" rpy="0 0 0"/>
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}right_wheel_1"/>
+      <axis xyz="1.0 0.0 0.0"/>
+    </joint>
+
+    <joint name="${prefix}left_wheel_joint" type="continuous">
+      <origin xyz="0.277998 -0.007002 0.10065" rpy="0 0 0"/>
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}left_wheel_1"/>
+      <axis xyz="1.0 0.0 0.0"/>
+    </joint>
+
+    <!-- caster -->
+    <link name="${prefix}caster_front_link">
+      <collision>
+        <origin xyz="0 0 -0.0125" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.05 0.05 0.025"/>
+        </geometry>
+      </collision>
+
+      <visual>
+        <geometry>
+          <sphere radius="0.025"/>
+        </geometry>
+        <material name="dark"/>
+      </visual>
+
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.025"/>
+        <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}caster_front_joint" type="fixed">
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}caster_front_link"/>
+      <origin xyz="0 -0.3 0.025" rpy="0 0 0"/>
+    </joint>
+
+    <link name="${prefix}caster_back_link">
+      <collision>
+        <origin xyz="0 0 -0.0125" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.05 0.05 0.025"/>
+        </geometry>
+      </collision>
+
+      <visual>
+        <geometry>
+          <sphere radius="0.025"/>
+        </geometry>
+        <material name="dark"/>
+      </visual>
+
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.025"/>
+        <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001" />
+      </inertial>
+    </link>
+
+    <joint name="${prefix}caster_back_joint" type="fixed">
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}caster_back_link"/>
+      <origin xyz="0 0.33 0.025" rpy="0 0 0"/>
+    </joint>
+
+    <!-- mount -->
+    <link name="${prefix}mid_mount"/>
+    <joint name="${prefix}mid_mount_joint" type="fixed">
+      <parent link="${prefix}base_link"/>
+      <child link="${prefix}mid_mount"/>
+      <origin xyz="0 0.2 0.765" rpy="0 0 0"/>
+    </joint>
+
+  </xacro:macro>
+
+  <!-- <xacro:factoryRobot_v2 prefix=""/> -->
+
+</robot>

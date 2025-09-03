@@ -1,0 +1,10 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: melon_description
+    relative_path: urdf/melon.urdf
+  srdf:
+    relative_path: config/melon.srdf
+  package_settings:
+    author_name: SSatoya
+    author_email: c0b230860d@edu.teu.ac.jp
+    generated_timestamp: 1756892321

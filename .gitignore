@@ -1,0 +1,4 @@
+# Ignore the build, install, and logs directories
+./melon_ws/build/
+./melon_ws/install/
+./melon_ws/logs/
