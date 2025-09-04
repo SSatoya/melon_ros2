@@ -24,6 +24,8 @@ Melonのnavigationやmoveitを起動するROS2環境のコンテナを作成し�
 以下のコマンドを実行することでコンテナを作成することができます。
 
 ```shell
+git clone https://github.com/SSatoya/melon_ros2.git
+cd melon_ros2
 ./build.sh
 ```
 - 以下の点に注意してください：
