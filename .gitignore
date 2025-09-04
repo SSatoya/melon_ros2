@@ -2,3 +2,6 @@
 ./melon_ws/build/
 ./melon_ws/install/
 ./melon_ws/logs/
+
+# Ignore the franka_description package directory
+./melon_ws/src/franka_description/
