@@ -5,7 +5,7 @@ Isaac Simは、[こちらのリポジトリ]を使用して環境構築してく
 
 ## インストール
 
-### Isaac Simコンテナ内でのセットアップ
+### Isaac Simコンテナ内でのUSDファイルのDL
 
 ```shell
 git clone https://github.com/SSatoya/melon_ros2.git
