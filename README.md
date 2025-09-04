@@ -1,6 +1,6 @@
 # Melon Robot with Isaac Sim and ROS2 Humble
 
-このリポジトリには、モバイルマニピュレータであるMelonをROS2 HumbleとIsaac Sim5.0.0環境でシミュレーションするためのROS2パッケージとUSDファイルが含まれています。
+このリポジトリには、モバイルマニピュレータであるMelonをROS2 HumbleとIsaac Sim5.0.0環境でシミュレーションするためのROS2パッケージとUSDファイルが含まれています。<br>
 Isaac Simは、[こちらのリポジトリ]を使用して環境構築してください。
 
 ## インストール
@@ -20,8 +20,17 @@ USDファイルをダウンロードするには以下を実行してくださ�
 
 ### ROS2 Dockerコンテナの作成
 
-Coming Soon... 🚧
+Melonのnavigationやmoveitを起動するROS2環境のコンテナを作成します。<br>
+以下のコマンドを実行することでコンテナを作成することができます。
 
+```shell
+./build.sh
+```
+- 以下の点に注意してください：
+  - GPU：必須
+  - ROS_DOMAIN_ID：(default)80
+    - 変更したい場合は、`Docker`ファイル内の該当箇所を書き換えてbuildするか、コンテナ内の`.bashrc`を書き換えてください。
+  
 
 ## 使用方法
 
