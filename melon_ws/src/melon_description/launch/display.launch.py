@@ -11,7 +11,7 @@ from ament_index_python.packages import get_package_share_directory
 def generate_launch_description():
 
     package_name = 'melon_description'
-    xacro_file_name = 'melon_v5.urdf.xacro'
+    xacro_file_name = 'melon.urdf.xacro'
     # xacro_file_name = 'factoryRobot_v2.xacro'
     rviz_file_name = 'display.rviz'
 
