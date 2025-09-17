@@ -18,6 +18,8 @@ USDファイルをダウンロードするには以下を実行してくださ�
 ./install.sh
 ```
 
+これにより、`/robot/assets/melon`内に`Collected_melon_v?`が作成されます
+
 ### ROS2 Dockerコンテナの作成
 
 Melonのnavigationやmoveitを起動するROS2環境のコンテナを作成します。<br>
@@ -32,8 +34,19 @@ cd melon_ros2
   - GPU：必須
   - ROS_DOMAIN_ID：(default)80
     - 変更したい場合は、`Docker`ファイル内の該当箇所を書き換えてbuildするか、コンテナ内の`.bashrc`を書き換えてください。
-  
 
+
+コンテナが作成されたら以下のコマンドで入り、colcon buildしてください
+
+```shell
+docker exec -it melon_ros2 bash
+```
+```shell
+# コンテナ内
+colcon build
+source install/setup.bash
+```
+  
 ## 使用方法
 
 ### ロボットビジュアライゼーション
