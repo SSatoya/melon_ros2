@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-mkdir -p assets
+mkdir -p /robot/assets
 
 # Check if git-lfs is installed, if not, install it
 if ! command -v git-lfs &> /dev/null; then
@@ -18,9 +18,9 @@ echo "Downloading USD file from Hugging Face Hub..."
 
 if [ -d "assets/melon/.git" ]; then
   echo "Repository already exists. Pulling latest changes..."
-  git -C assets/melon pull
+  git -C /robot/assets/melon pull
 else
-  git clone https://huggingface.co/datasets/SSatoya/melon_usd assets/melon
+  git clone https://huggingface.co/datasets/SSatoya/melon_usd /robot/assets/melon
 fi
 
-echo "Download complete! Files are in 'assets/melon'."
+echo "Download complete! Files are in '/robot/assets/melon'."
