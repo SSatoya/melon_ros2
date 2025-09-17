@@ -29,7 +29,7 @@ def generate_launch_description():
             [
                 FindPackageShare(package_name),
                 'map',
-                'draft_lime.yaml'
+                'factory_base.yaml'
             ]
         )
     )
