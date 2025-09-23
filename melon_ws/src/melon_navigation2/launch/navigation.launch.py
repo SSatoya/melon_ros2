@@ -29,7 +29,7 @@ def generate_launch_description():
             [
                 FindPackageShare(package_name),
                 'map',
-                'factory_base.yaml'
+                'factory_base_v3.4.yaml'
             ]
         )
     )
