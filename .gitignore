@@ -5,3 +5,7 @@ melon_ws/log/
 
 # Ignore the franka_description package directory
 melon_ws/src/franka_description/
+
+# Ignore Python bytecode files
+*.pyc
+__pycache__/
