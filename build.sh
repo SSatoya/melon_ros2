@@ -11,8 +11,8 @@ cd ../../
 
 # 2. build docker image
 build_docker_image(){
-  if docker images | grep -q "melon_ros2.*latest"; then
-    echo "Docker image 'melon_ros2:latest' already exists."
+  if docker images | grep -q "melon_ros2_app.*latest"; then
+    echo "Docker image 'melon_ros2_app:latest' already exists."
     read -p "Do you want to rebuild it? (y/N): " -n 1 -r
     echo
     if [[ ! $REPLY =~ ^[Yy]$ ]]; then
@@ -22,12 +22,12 @@ build_docker_image(){
   fi
 
   echo "Building Docker image..."
-  docker build -t melon_ros2:latest .
+  docker build -t melon_ros2_app:latest .
 
-  if docker images | grep -q "melon_ros2.*latest"; then
-    echo "Docker image 'melon_ros2:latest' built successfully."
+  if docker images | grep -q "melon_ros2_app.*latest"; then
+    echo "Docker image 'melon_ros2_app:latest' built successfully."
   else
-    echo "Failed to build Docker image 'melon_ros2:latest'."
+    echo "Failed to build Docker image 'melon_ros2_app:latest'."
     exit 1
   fi
 }
@@ -56,10 +56,11 @@ run_docker_container(){
     -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
     -v $HOME/.Xauthority:/root/.Xauthority:ro \
     -v $(pwd)/melon_ws:/root/melon_ws:rw \
+    -v $(pwd)/pytwb_ws:/root/pytwb_ws:rw \
     -w /root/melon_ws \
     --tty \
     --gpus all \
-    melon_ros2:latest \
+    melon_ros2_app:latest \
     tail -f /dev/null
 }
 
@@ -74,9 +75,25 @@ connect_to_container(){
   fi
 
   echo "Connecting to Docker container..."
+  echo ""
+  echo "==============================="
+  echo ""
   echo "If this is your first time inside a container, first run the following command:"
-  echo "1. build: 'colcon build'"
-  echo "2. Source the workspace: 'source install/setup.bash'"
+  echo ""
+  echo "For Melon ROS2 workspace:"
+  echo "1. $ colcon build"
+  echo "2. $ source install/setup.bash"
+  echo ""
+  echo "For Behavior Tree and ros_actor applications:"
+  echo "1. $ cd /root/pytwb_ws"
+  echo "2. $ pytwb"
+  echo "3. > create cm1"
+  echo "4. > Y"
+  echo "5. > exit"
+  echo "From now on, you can run the application by typing the command:"
+  echo "$ actor"
+  echo ""
+  echo "==============================="
   docker exec -it ${CONTAINER_NAME:-melon_ros2} bash
 }
 
