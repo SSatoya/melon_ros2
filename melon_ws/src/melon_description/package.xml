@@ -3,9 +3,9 @@
 <package format="3">
 <name>melon_description</name>
   <version>0.0.0</version>
-<description>The melon_description package</description>
-  <maintainer email="todo@todo.com">author</maintainer>
-  <license>TODO: License declaration</license>
+<description>URDF descriptions and meshes for the Melon robot</description>
+  <maintainer email="c0b230860d@edu.teu.ac.jp">SSatoya</maintainer>
+  <license>MIT</license>
 
   <depend>xacro</depend>
   <depend>rviz2</depend>

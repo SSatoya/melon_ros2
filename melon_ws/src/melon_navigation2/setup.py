@@ -19,10 +19,10 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='root',
-    maintainer_email='root@todo.todo',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    maintainer='SSatoya',
+    maintainer_email='c0b230860d@edu.teu.ac.jp',
+    description='Navigation2 configuration and nodes for the Melon robot',
+    license='MIT',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [

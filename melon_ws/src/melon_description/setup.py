@@ -20,10 +20,10 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='author',
-    maintainer_email='todo@todo.com',
-    description='The ' + package_name + ' package',
-    license='TODO: License declaration',
+    maintainer='SSatoya',
+    maintainer_email='c0b230860d@edu.teu.ac.jp',
+    description='URDF descriptions and meshes for the Melon robot',
+    license='MIT',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
