@@ -22,21 +22,117 @@
         <inertia ixx="16.050446" iyy="13.982493" izz="18.567703" ixy="0.002034" iyz="-2.999695" ixz="0.007151"/>
       </inertial>
 
-      <visual>
+      <!-- <visual>
         <origin xyz="0 0 0" rpy="0 0 1.57"/>
         <geometry>
-          <!-- <mesh filename="file://$(find melon_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/> -->
           <mesh filename="package://melon_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
         </geometry>
         <material name="silver"/>
       </visual>
-
       <collision>
         <origin xyz="0 0 0" rpy="0 0 1.57"/>
         <geometry>
-          <!-- <mesh filename="file://$(find melon_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/> -->
           <mesh filename="package://melon_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
-          <!-- <box size="0.715 0.82 0.42"/> -->
+        </geometry>
+      </collision> -->
+
+      <!-- body -->
+      <visual>
+        <origin xyz="-0.002 0.005 0.05" rpy="0 0 1.57"/>
+        <geometry>
+          <mesh filename="package://melon_description/meshes/body_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="midnight_blue"/>
+      </visual>
+      <collision>
+        <origin xyz="-0.002 0.005 0.05" rpy="0 0 1.57"/>
+        <geometry>
+          <mesh filename="package://melon_description/meshes/body_1.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </collision>
+
+      <visual>
+        <origin xyz="0.0075 0.678 0.069" rpy="0 0 1.57"/>
+        <geometry>
+          <mesh filename="package://melon_description/meshes/body_2.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="dark_black"/>
+      </visual>
+      <collision>
+        <origin xyz="0.0075 0.678 0.069" rpy="0 0 1.57"/>
+        <geometry>
+          <mesh filename="package://melon_description/meshes/body_2.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </collision>
+
+      <visual>
+        <origin xyz="0.027 0.025 0.37" rpy="0 0 -1.57"/>
+        <geometry>
+          <mesh filename="package://melon_description/meshes/body_3.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="charcoal"/>
+      </visual>
+      <collision>
+        <origin xyz="0.027 0.025 0.37" rpy="0 0 -1.57"/>
+        <geometry>
+          <mesh filename="package://melon_description/meshes/body_3.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </collision>
+
+      <!-- caster mount -->
+      <visual>
+        <origin xyz="0.3 0.200 0.06" rpy="3.14 0 1.57"/>
+        <geometry>
+          <mesh filename="package://melon_description/meshes/ballfoint.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="midnight_blue"/>
+      </visual>
+      <collision>
+        <origin xyz="0.3 0.200 0.06" rpy="3.14 0 1.57"/>
+        <geometry>
+          <mesh filename="package://melon_description/meshes/ballfoint.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </collision>
+
+      <visual>
+        <origin xyz="0.3 -0.200 0.06" rpy="3.14 0 1.57"/>
+        <geometry>
+          <mesh filename="package://melon_description/meshes/ballfoint.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="midnight_blue"/>
+      </visual>
+      <collision>
+        <origin xyz="0.3 -0.200 0.06" rpy="3.14 0 1.57"/>
+        <geometry>
+          <mesh filename="package://melon_description/meshes/ballfoint.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </collision>
+
+      <visual>
+        <origin xyz="-0.33 0.200 0.06" rpy="3.14 0 1.57"/>
+        <geometry>
+          <mesh filename="package://melon_description/meshes/ballfoint.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="midnight_blue"/>
+      </visual>
+      <collision>
+        <origin xyz="-0.33 0.200 0.06" rpy="3.14 0 1.57"/>
+        <geometry>
+          <mesh filename="package://melon_description/meshes/ballfoint.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </collision>
+
+      <visual>
+        <origin xyz="-0.33 -0.200 0.06" rpy="3.14 0 1.57"/>
+        <geometry>
+          <mesh filename="package://melon_description/meshes/ballfoint.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+        <material name="midnight_blue"/>
+      </visual>
+      <collision>
+        <origin xyz="-0.33 -0.200 0.06" rpy="3.14 0 1.57"/>
+        <geometry>
+          <mesh filename="package://melon_description/meshes/ballfoint.stl" scale="0.001 0.001 0.001"/>
         </geometry>
       </collision>
     </link>
@@ -60,25 +156,20 @@
       <visual>
         <origin xyz="0.242002 0.007002 -0.10065" rpy="0 0 0"/>
         <geometry>
-          <!-- <mesh filename="file://$(find melon_description)/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/> -->
           <mesh filename="package://melon_description/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
         </geometry>
         <material name="dark"/>
       </visual>
-
       <collision>
-        <origin xyz="-0.02 0.0 0.0" rpy="0 1.57 0"/>
-        <!-- <origin xyz="0.242002 0.007002 -0.10065" rpy="0 0 0"/> -->
+        <origin xyz="-0.04 0.0 0.0" rpy="0 1.57 0"/>
         <geometry>
-          <!-- <mesh filename="file://$(find melon_description)/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/> -->
-          <!-- <mesh filename="package://melon_description/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/> -->
           <cylinder length="0.05" radius="0.10065"/>
         </geometry>
       </collision>
     </link>
 
     <joint name="${prefix}left_wheel_joint" type="continuous">
-      <origin xyz="0.007002 0.277998 0.10065" rpy="0 0 1.57"/>
+      <origin xyz="0.007002 0.279998 0.10065" rpy="0 0 1.57"/>
       <parent link="${prefix}base_link"/>
       <child link="${prefix}left_wheel_1"/>
       <axis xyz="1.0 0.0 0.0"/>
@@ -95,35 +186,30 @@
       <visual>
         <origin xyz="-0.277998 0.007002 -0.10065" rpy="0 0 0"/>
         <geometry>
-          <!-- <mesh filename="file://$(find melon_description)/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/> -->
           <mesh filename="package://melon_description/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/>
         </geometry>
         <material name="dark"/>
       </visual>
-
       <collision>
-        <origin xyz="0.02 0.0 0.0" rpy="0 1.57 0"/>
-        <!-- <origin xyz="-0.277998 0.007002 -0.10065" rpy="0 0 0"/> -->
+        <origin xyz="0.01 0.0 0.0" rpy="0 1.57 0"/>
         <geometry>
-          <!-- <mesh filename="file://$(find melon_description)/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/> -->
-          <!-- <mesh filename="package://melon_description/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/> -->
           <cylinder length="0.05" radius="0.10065"/>
         </geometry>
       </collision>
     </link>
 
     <!-- passive wheel -->
-    <!-- front -->
-    <joint name="${prefix}front_passive_wheel_x_frame_joint" type="continuous">
+    <!-- front left -->
+    <joint name="${prefix}front_left_passive_wheel_x_frame_joint" type="continuous">
       <parent link="${prefix}base_link" />
-      <child link="${prefix}front_passive_wheel_x_frame" />
+      <child link="${prefix}front_left_passive_wheel_x_frame" />
       <axis xyz="1.0 0.0 0.0" />
       <limit effort="1.0" velocity="3.0" />
-      <origin xyz="0.3 0.0 0.025" rpy="0 0 0"/>
+      <origin xyz="0.3 0.2 0.025" rpy="0 0 0"/>
       <dynamics damping="1.0"/>
     </joint>
 
-    <link name="${prefix}front_passive_wheel_x_frame">
+    <link name="${prefix}front_left_passive_wheel_x_frame">
       <inertial>
           <mass value="0.2"/>
           <origin xyz="0 0 0"/>
@@ -133,16 +219,16 @@
       </inertial>
     </link>
 
-    <joint name="${prefix}front_passive_wheel_y_frame_joint" type="continuous">
-      <parent link="${prefix}front_passive_wheel_x_frame" />
-      <child link="${prefix}front_passive_wheel_y_frame" />
+    <joint name="${prefix}front_left_passive_wheel_y_frame_joint" type="continuous">
+      <parent link="${prefix}front_left_passive_wheel_x_frame" />
+      <child link="${prefix}front_left_passive_wheel_y_frame" />
       <axis xyz="0.0 1.0 0.0" />
       <limit effort="1.0" velocity="3.0" />
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <dynamics damping="1.0"/>
     </joint>
 
-    <link name="${prefix}front_passive_wheel_y_frame">
+    <link name="${prefix}front_left_passive_wheel_y_frame">
       <inertial>
           <mass value="0.2"/>
           <origin xyz="0 0 0"/>
@@ -152,16 +238,16 @@
       </inertial>
     </link>
 
-    <joint name="${prefix}front_passive_wheel_z_frame_joint" type="continuous">
-      <parent link="${prefix}front_passive_wheel_y_frame" />
-      <child link="${prefix}front_passive_wheel_z_link" />
+    <joint name="${prefix}front_left_passive_wheel_z_frame_joint" type="continuous">
+      <parent link="${prefix}front_left_passive_wheel_y_frame" />
+      <child link="${prefix}front_left_passive_wheel_z_link" />
       <axis xyz="0.0 0.0 1.0" />
       <limit effort="1.0" velocity="3.0" />
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <dynamics damping="1.0"/>
     </joint>
 
-    <link name="${prefix}front_passive_wheel_z_link">
+    <link name="${prefix}front_left_passive_wheel_z_link">
       <visual>
         <geometry>
           <sphere radius="0.025"/>
@@ -182,17 +268,17 @@
       </inertial>
     </link>
 
-    <!-- back -->
-    <joint name="${prefix}back_passive_wheel_x_frame_joint" type="continuous">
+    <!-- front right -->
+    <joint name="${prefix}front_right_passive_wheel_x_frame_joint" type="continuous">
       <parent link="${prefix}base_link" />
-      <child link="${prefix}back_passive_wheel_x_frame" />
+      <child link="${prefix}front_right_passive_wheel_x_frame" />
       <axis xyz="1.0 0.0 0.0" />
       <limit effort="1.0" velocity="3.0" />
-      <origin xyz="-0.33 0.0 0.025" rpy="0 0 0"/>
+      <origin xyz="0.3 -0.2 0.025" rpy="0 0 0"/>
       <dynamics damping="1.0"/>
     </joint>
 
-    <link name="${prefix}back_passive_wheel_x_frame">
+    <link name="${prefix}front_right_passive_wheel_x_frame">
       <inertial>
           <mass value="0.2"/>
           <origin xyz="0 0 0"/>
@@ -202,16 +288,16 @@
       </inertial>
     </link>
 
-    <joint name="${prefix}back_passive_wheel_y_frame_joint" type="continuous">
-      <parent link="${prefix}back_passive_wheel_x_frame" />
-      <child link="${prefix}back_passive_wheel_y_frame" />
+    <joint name="${prefix}front_right_passive_wheel_y_frame_joint" type="continuous">
+      <parent link="${prefix}front_right_passive_wheel_x_frame" />
+      <child link="${prefix}front_right_passive_wheel_y_frame" />
       <axis xyz="0.0 1.0 0.0" />
       <limit effort="1.0" velocity="3.0" />
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <dynamics damping="1.0"/>
     </joint>
 
-    <link name="${prefix}back_passive_wheel_y_frame">
+    <link name="${prefix}front_right_passive_wheel_y_frame">
       <inertial>
           <mass value="0.2"/>
           <origin xyz="0 0 0"/>
@@ -221,16 +307,154 @@
       </inertial>
     </link>
 
-    <joint name="${prefix}back_passive_wheel_z_frame_joint" type="continuous">
-      <parent link="${prefix}back_passive_wheel_y_frame" />
-      <child link="${prefix}back_passive_wheel_z_link" />
+    <joint name="${prefix}front_right_passive_wheel_z_frame_joint" type="continuous">
+      <parent link="${prefix}front_right_passive_wheel_y_frame" />
+      <child link="${prefix}front_right_passive_wheel_z_link" />
       <axis xyz="0.0 0.0 1.0" />
       <limit effort="1.0" velocity="3.0" />
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <dynamics damping="1.0"/>
     </joint>
 
-    <link name="${prefix}back_passive_wheel_z_link">
+    <link name="${prefix}front_right_passive_wheel_z_link">
+      <visual>
+        <geometry>
+          <sphere radius="0.025"/>
+        </geometry>
+        <material name="dark"/>
+      </visual>
+      <collision>
+        <geometry>
+          <sphere radius="0.025"/>
+        </geometry>
+      </collision>
+      <inertial>
+          <mass value="0.2"/>
+          <origin xyz="0 0 0"/>
+          <inertia ixx="0.001" ixy="0" ixz="0" 
+                   iyy="0.001" iyz="0" 
+                   izz="0.001"/>
+      </inertial>
+    </link>
+
+    <!-- back left-->
+    <joint name="${prefix}back_left_passive_wheel_x_frame_joint" type="continuous">
+      <parent link="${prefix}base_link" />
+      <child link="${prefix}back_left_passive_wheel_x_frame" />
+      <axis xyz="1.0 0.0 0.0" />
+      <limit effort="1.0" velocity="3.0" />
+      <origin xyz="-0.33 0.2 0.025" rpy="0 0 0"/>
+      <dynamics damping="1.0"/>
+    </joint>
+
+    <link name="${prefix}back_left_passive_wheel_x_frame">
+      <inertial>
+          <mass value="0.2"/>
+          <origin xyz="0 0 0"/>
+          <inertia ixx="0.001" ixy="0" ixz="0" 
+                   iyy="0.001" iyz="0" 
+                   izz="0.001"/>
+      </inertial>
+    </link>
+
+    <joint name="${prefix}back_left_passive_wheel_y_frame_joint" type="continuous">
+      <parent link="${prefix}back_left_passive_wheel_x_frame" />
+      <child link="${prefix}back_left_passive_wheel_y_frame" />
+      <axis xyz="0.0 1.0 0.0" />
+      <limit effort="1.0" velocity="3.0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <dynamics damping="1.0"/>
+    </joint>
+
+    <link name="${prefix}back_left_passive_wheel_y_frame">
+      <inertial>
+          <mass value="0.2"/>
+          <origin xyz="0 0 0"/>
+          <inertia ixx="0.001" ixy="0" ixz="0" 
+                   iyy="0.001" iyz="0" 
+                   izz="0.001"/>
+      </inertial>
+    </link>
+
+    <joint name="${prefix}back_left_passive_wheel_z_frame_joint" type="continuous">
+      <parent link="${prefix}back_left_passive_wheel_y_frame" />
+      <child link="${prefix}back_left_passive_wheel_z_link" />
+      <axis xyz="0.0 0.0 1.0" />
+      <limit effort="1.0" velocity="3.0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <dynamics damping="1.0"/>
+    </joint>
+
+    <link name="${prefix}back_left_passive_wheel_z_link">
+      <visual>
+        <geometry>
+          <sphere radius="0.025"/>
+        </geometry>
+        <material name="dark"/>
+      </visual>
+      <collision>
+        <geometry>
+          <sphere radius="0.025"/>
+        </geometry>
+      </collision>
+      <inertial>
+          <mass value="0.2"/>
+          <origin xyz="0 0 0"/>
+          <inertia ixx="0.001" ixy="0" ixz="0" 
+                   iyy="0.001" iyz="0" 
+                   izz="0.001"/>
+      </inertial>
+    </link>
+
+    <!-- back right-->
+    <joint name="${prefix}back_right_passive_wheel_x_frame_joint" type="continuous">
+      <parent link="${prefix}base_link" />
+      <child link="${prefix}back_right_passive_wheel_x_frame" />
+      <axis xyz="1.0 0.0 0.0" />
+      <limit effort="1.0" velocity="3.0" />
+      <origin xyz="-0.33 -0.2 0.025" rpy="0 0 0"/>
+      <dynamics damping="1.0"/>
+    </joint>
+
+    <link name="${prefix}back_right_passive_wheel_x_frame">
+      <inertial>
+          <mass value="0.2"/>
+          <origin xyz="0 0 0"/>
+          <inertia ixx="0.001" ixy="0" ixz="0" 
+                   iyy="0.001" iyz="0" 
+                   izz="0.001"/>
+      </inertial>
+    </link>
+
+    <joint name="${prefix}back_right_passive_wheel_y_frame_joint" type="continuous">
+      <parent link="${prefix}back_right_passive_wheel_x_frame" />
+      <child link="${prefix}back_right_passive_wheel_y_frame" />
+      <axis xyz="0.0 1.0 0.0" />
+      <limit effort="1.0" velocity="3.0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <dynamics damping="1.0"/>
+    </joint>
+
+    <link name="${prefix}back_right_passive_wheel_y_frame">
+      <inertial>
+          <mass value="0.2"/>
+          <origin xyz="0 0 0"/>
+          <inertia ixx="0.001" ixy="0" ixz="0" 
+                   iyy="0.001" iyz="0" 
+                   izz="0.001"/>
+      </inertial>
+    </link>
+
+    <joint name="${prefix}back_right_passive_wheel_z_frame_joint" type="continuous">
+      <parent link="${prefix}back_right_passive_wheel_y_frame" />
+      <child link="${prefix}back_right_passive_wheel_z_link" />
+      <axis xyz="0.0 0.0 1.0" />
+      <limit effort="1.0" velocity="3.0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <dynamics damping="1.0"/>
+    </joint>
+
+    <link name="${prefix}back_right_passive_wheel_z_link">
       <visual>
         <geometry>
           <sphere radius="0.025"/>
@@ -274,11 +498,24 @@
         </geometry>
         <material name="black"/>
       </visual>
-
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
           <cylinder length="0.05" radius="0.05"/>
+        </geometry>
+      </collision>
+
+      <visual>
+        <origin xyz="0 0 -0.02" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.11 0.11 0.02"/>
+        </geometry>
+        <material name="charcoal"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 -0.02" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.11 0.11 0.02"/>
         </geometry>
       </collision>
     </link>
@@ -288,11 +525,11 @@
     <joint name="${prefix}mid_mount_joint" type="fixed">
       <parent link="${prefix}base_link"/>
       <child link="${prefix}mid_mount"/>
-      <origin xyz="-0.2 0 0.765" rpy="0 0 1.57"/>
+      <origin xyz="0.3 0 0.765" rpy="0 0 1.57"/>
     </joint>
 
   </xacro:macro>
 
-  <!-- <xacro:base prefix=""/> -->
+  <xacro:base prefix=""/>
 
 </robot>
